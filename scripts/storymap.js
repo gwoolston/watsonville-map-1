@@ -117,7 +117,7 @@ $(window).on('load', function() {
     addBaseMap();
 
     // Add zoom controls if needed
-    if (getSetting('_zoomControls') !== 'on') {
+    if (getSetting('_zoomControls') !== 'off') {
       L.control.zoom({
         position: getSetting('_zoomControls')
       }).addTo(map);
