@@ -288,16 +288,16 @@ $(window).on('load', function() {
       var currentPosition = $(this).scrollTop();
 
       // Make title disappear on scroll
-      // if (currentPosition < 200) {
-      //   $('#title').css('opacity', 1 - Math.min(1, currentPosition / 100));
-      // }
+      if (currentPosition < 200) {
+        $('#title').css('opacity', 1 - Math.min(1, currentPosition / 100));
+      }
 
-      // for (var i = 0; i < pixelsAbove.length - 1; i++) {
+      for (var i = 0; i < pixelsAbove.length - 1; i++) {
 
-      //   if ( currentPosition >= pixelsAbove[i]
-      //     && currentPosition < (pixelsAbove[i+1] - 2 * chapterContainerMargin)
-      //     && currentlyInFocus != i
-      //   ) {
+        if ( currentPosition >= pixelsAbove[i]
+          && currentPosition < (pixelsAbove[i+1] - 2 * chapterContainerMargin)
+          && currentlyInFocus != i
+        ) {
 
           // Update URL hash
           location.hash = i + 1;
