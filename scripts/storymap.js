@@ -382,7 +382,7 @@ $(window).on('load', function() {
           if (c['Latitude'] && c['Longitude']) {
             var zoom = c['Zoom'] ? c['Zoom'] : CHAPTER_ZOOM;
             map.flyTo([c['Latitude'], c['Longitude']], zoom, {
-              animate: true,
+              animate: false,
               duration: 2, // default is 2 seconds
             });
           }
