@@ -450,12 +450,12 @@ $(window).on('load', function() {
     $('div#contents').animate({scrollTop: '1px'});
 
     // On first load, check hash and if it contains an number, scroll down
-    // if (parseInt(location.hash.substr(1))) {
-    //   var containerId = parseInt( location.hash.substr(1) ) - 1;
-    //   $('#contents').animate({
-    //     scrollTop: $('#container' + containerId).offset().top
-    //   }, 2000);
-    // }
+    if (parseInt(location.hash.substr(1))) {
+      var containerId = parseInt( location.hash.substr(1) ) - 1;
+      $('#contents').animate({
+        scrollTop: $('#container' + containerId).offset().top
+      }, 2000);
+    }
 
     // Add Google Analytics if the ID exists
     var ga = getSetting('_googleAnalytics');
