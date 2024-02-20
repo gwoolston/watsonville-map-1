@@ -1,0 +1,7 @@
+{
+"type": "FeatureCollection",
+"name": "SecondStreet",
+"features": [
+{ "type": "Feature", "properties": { "WKT": "LINESTRING (-121.7569219 36.9082422,-121.7595504 36.9064149,-121.7631982 36.9038755)", "name": "Second Street (Manuel Silva's Garden)", "description": "" }, "geometry": { "type": "LineString", "coordinates": [ [ -121.7569219, 36.9082422 ], [ -121.7595504, 36.9064149 ], [ -121.7631982, 36.9038755 ] ] } }
+]
+}
