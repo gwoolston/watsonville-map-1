@@ -288,16 +288,16 @@ $(window).on('load', function() {
       var currentPosition = $(this).scrollTop();
 
       // Make title disappear on scroll
-      if (currentPosition < 200) {
-        $('#title').css('opacity', 1 - Math.min(1, currentPosition / 100));
-      }
+      // if (currentPosition < 200) {
+      //   $('#title').css('opacity', 1 - Math.min(1, currentPosition / 100));
+      // }
 
-      for (var i = 0; i < pixelsAbove.length - 1; i++) {
+      // for (var i = 0; i < pixelsAbove.length - 1; i++) {
 
-        if ( currentPosition >= pixelsAbove[i]
-          && currentPosition < (pixelsAbove[i+1] - 2 * chapterContainerMargin)
-          && currentlyInFocus != i
-        ) {
+      //   if ( currentPosition >= pixelsAbove[i]
+      //     && currentPosition < (pixelsAbove[i+1] - 2 * chapterContainerMargin)
+      //     && currentlyInFocus != i
+      //   ) {
 
           // Update URL hash
           location.hash = i + 1;
@@ -382,8 +382,8 @@ $(window).on('load', function() {
           if (c['Latitude'] && c['Longitude']) {
             var zoom = c['Zoom'] ? c['Zoom'] : CHAPTER_ZOOM;
             map.flyTo([c['Latitude'], c['Longitude']], zoom, {
-              animate: false,
-              duration: 2, // default is 2 seconds
+              animate: true,
+              duration: 1, // default is 2 seconds
             });
           }
 
@@ -450,12 +450,12 @@ $(window).on('load', function() {
     $('div#contents').animate({scrollTop: '1px'});
 
     // On first load, check hash and if it contains an number, scroll down
-    if (parseInt(location.hash.substr(1))) {
-      var containerId = parseInt( location.hash.substr(1) ) - 1;
-      $('#contents').animate({
-        scrollTop: $('#container' + containerId).offset().top
-      }, 2000);
-    }
+    // if (parseInt(location.hash.substr(1))) {
+    //   var containerId = parseInt( location.hash.substr(1) ) - 1;
+    //   $('#contents').animate({
+    //     scrollTop: $('#container' + containerId).offset().top
+    //   }, 2000);
+    // }
 
     // Add Google Analytics if the ID exists
     var ga = getSetting('_googleAnalytics');
