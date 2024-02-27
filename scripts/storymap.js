@@ -261,7 +261,7 @@ $(window).on('load', function() {
         .append(media ? mediaContainer : '')
         .append(media ? source : '')
         .append('<p class="description">' + c['Description'] + '</p>');
-
+        .append('<p class="sources">' + c['Sources'] + '</p>');
       $('#contents').append(container);
 
     }
@@ -383,7 +383,7 @@ $(window).on('load', function() {
             var zoom = c['Zoom'] ? c['Zoom'] : CHAPTER_ZOOM;
             map.flyTo([c['Latitude'], c['Longitude']], zoom, {
               animate: true,
-              duration: 1, // default is 2 seconds
+              duration: 1.5, // default is 2 seconds
             });
           }
 
