@@ -98,7 +98,7 @@ $(window).on('load', function() {
     }).addTo(map);
 
     // Disable animation on load
-    map.setView([36.91029104437439, -121.75611790937582], 15);
+    map.setView([36.91029104437439, -121.75611790937582], 15, { animate: false });
 
     // Disable default zoom control (again)
     map.zoomControl.remove();
