@@ -484,17 +484,17 @@ $(window).on('load', function() {
     //   + (typeof googleDocURL !== 'undefined' && googleDocURL ? googleDocURL : './csv/Chapters.csv')
     //   + '" target="_blank">data</a>';
     
-    // var name = getSetting('_authorName');
-    // var url = getSetting('_authorURL');
+    var name = getSetting('_authorName');
+    var url = getSetting('_authorURL');
 
-    // if (name && url) {
-    //   if (url.indexOf('@') > 0) { url = 'mailto:' + url; }
-    //   credit += ' by <a href="' + url + '">' + name + '</a> | ';
-    // } else if (name) {
-    //   credit += ' by ' + name + ' | ';
-    // } else {
-    //   credit += ' | ';
-    // }
+    if (name && url) {
+      if (url.indexOf('@') > 0) { url = 'mailto:' + url; }
+      credit += ' by <a href="' + url + '">' + name + '</a> | ';
+    } else if (name) {
+      credit += ' by ' + name + ' | ';
+    } else {
+      credit += ' | ';
+    }
 
     credit += 'View <a href="' + getSetting('_githubRepo') + '">code</a>';
     if (getSetting('_codeCredit')) credit += ' by ' + getSetting('_codeCredit');
