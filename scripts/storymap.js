@@ -101,7 +101,7 @@ $(window).on('load', function() {
     // Disable default zoom control (again)
     map.zoomControl.remove();
     
-    // Add custom zoom control at bottom right
+    // Add zoom control at bottom right
     L.control.zoom({ position: 'bottomright' }).addTo(map);
 }
   
