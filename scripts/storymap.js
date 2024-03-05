@@ -499,7 +499,8 @@ $(window).on('load', function() {
     credit += 'View <a href="' + getSetting('_githubRepo') + '">code</a>';
     if (getSetting('_codeCredit')) credit += ' by ' + getSetting('_codeCredit');
     credit += ' with ';
-    $('.leaflet-control-attribution')[0].innerHTML;
+    $('.leaflet-control-attribution')[0].innerHTML = '<a href="http://github.com/handsondataviz/leaflet-point-map-sidebar" target="_blank">Code</a> by <a href="https://handsondataviz.org/" target="_blank">HandsOnDataViz</a> + attributionHTML';
+    // $('.leaflet-control-attribution')[0].innerHTML
   }
 
 });
