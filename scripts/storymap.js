@@ -97,7 +97,7 @@ $(window).on('load', function() {
       zoomAnimation: false, // Disable zoom animation
     }).addTo(map);
 
-    // Disable animation on load
+    // Disable animation on load (again)
     map.setView([36.91029104437439, -121.75611790937582], 15, { animate: false });
 
     // Disable default zoom control (again)
@@ -272,6 +272,7 @@ $(window).on('load', function() {
         .append('<p class="chapter-header">' + c['Chapter'] + '</p>')
         .append(media ? mediaContainer : '')
         .append(media ? source : '')
+        .append('<p class="date">' + c['Date'] + '</p>')
         .append('<p class="description">' + c['Description'] + '</p>')
         .append('<p class="sources">' + c['Sources'] + '</p>');
       $('#contents').append(container);
