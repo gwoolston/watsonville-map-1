@@ -94,7 +94,8 @@ $(window).on('load', function() {
       accessToken: trySetting('_tileProviderApiKey', ''),
   
       // Add the zoomAnimation options
-      zoomAnimation: false // Disable zoom animation
+      zoomAnimation: false, // Disable zoom animation
+      zoomControl: false // Disable default zoom control
     }).addTo(map);
 
     // Add custom zoom control at bottom right
