@@ -81,14 +81,8 @@ $(window).on('load', function() {
 
   /**
    * Loads the basemap and adds it to the map
-   */
-  L.Map.mergeOptions({
-    zoomAnimation: false
-  });
-  
-  function addBaseMap() {
-    var map = L.map('map');
-    
+   */  
+  function addBaseMap() {    
     var basemap = trySetting('_tileProvider', 'Stamen.TonerLite');
     L.tileLayer.provider(basemap, {
       maxZoom: 18,
