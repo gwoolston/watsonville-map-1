@@ -83,11 +83,6 @@ $(window).on('load', function() {
    * Loads the basemap and adds it to the map
    */
   function addBaseMap() {
-    var map = L.map('map', {
-      zoomAnimation: false,
-      zoomControl: false 
-    });
-    
     var basemap = trySetting('_tileProvider', 'Stamen.TonerLite');
     L.tileLayer.provider(basemap, {
       maxZoom: 18,
@@ -100,14 +95,13 @@ $(window).on('load', function() {
   
       // Add the zoomAnimation and zoomControl options
       zoomAnimation: false, // Disable zoom animation
-      // Disable default zoom control
     }).addTo(map);
 
     // Disable animation on load
     map.setView([36.91029104437439, -121.75611790937582], 15);
 
-    // // Disable default zoom control (again)
-    // map.zoomControl.remove();
+    // Disable default zoom control (again)
+    map.zoomControl.remove();
     
     // Add zoom control at bottom right
     L.control.zoom({ position: 'bottomright' }).addTo(map);
