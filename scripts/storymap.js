@@ -88,8 +88,7 @@ $(window).on('load', function() {
       maxZoom: 18,
       zoomControl: false,
       center: mapCenter,
-      zoom: mapZoom,
-      map = L.map('map', {      
+      zoom: mapZoom,    
       // Pass the api key to most commonly used parameters
       apiKey: trySetting('_tileProviderApiKey', ''),
       apikey: trySetting('_tileProviderApiKey', ''),
