@@ -98,6 +98,8 @@ $(window).on('load', function() {
       zoomControl: false // Disable default zoom control
     }).addTo(map);
 
+    map.setView([36.91029104437439, -121.75611790937582], 15);
+
     // Disable default zoom control (again)
     map.zoomControl.remove();
     
