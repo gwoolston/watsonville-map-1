@@ -93,12 +93,14 @@ $(window).on('load', function() {
       key: trySetting('_tileProviderApiKey', ''),
       accessToken: trySetting('_tileProviderApiKey', ''),
   
-      // Add the zoomControl and zoomAnimation options
-      zoomControl: false, // Disable zoom control
+      // Add the zoomAnimation options
       zoomAnimation: false // Disable zoom animation
     }).addTo(map);
-  }
 
+    // Add custom zoom control at bottom right
+    L.control.zoom({ position: 'bottomright' }).addTo(map);
+}
+  
   function initMap(options, chapters) {
     createDocumentSettings(options);
 
@@ -126,8 +128,7 @@ $(window).on('load', function() {
     //     position: getSetting('_zoomControls')
     //   }).addTo(map);
     // }
-    L.control.zoom({ position: 'bottomright' }).addTo(map);
-
+    
     var markers = [];
 
     var markActiveColor = function(k) {
