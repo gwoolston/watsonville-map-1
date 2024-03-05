@@ -86,14 +86,16 @@ $(window).on('load', function() {
     var basemap = trySetting('_tileProvider', 'Stamen.TonerLite');
     L.tileLayer.provider(basemap, {
       maxZoom: 18,
-      zoomControl: false,
-      center: mapCenter,
-      zoom: mapZoom,    
+
       // Pass the api key to most commonly used parameters
       apiKey: trySetting('_tileProviderApiKey', ''),
       apikey: trySetting('_tileProviderApiKey', ''),
       key: trySetting('_tileProviderApiKey', ''),
-      accessToken: trySetting('_tileProviderApiKey', '')
+      accessToken: trySetting('_tileProviderApiKey', ''),
+  
+      // Add the zoomControl and zoomAnimation options
+      zoomControl: false, // Disable zoom control
+      zoomAnimation: false // Disable zoom animation
     }).addTo(map);
   }
 
