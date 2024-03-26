@@ -118,6 +118,14 @@ a.source:visited {
   padding: 20px;
 }
 
+.sources {
+  font-size: 14px;
+  font-style: italic;
+  color: #333;
+  margin-top: 5px;
+  padding-bottom: 20px;
+}
+
 .in-focus {
   opacity: 1.0;
 }
@@ -173,4 +181,5 @@ h2 {
   margin: 0;
   font-size: 1.0em;
   font-weight: normal;
+  padding-bottom: 10px;
 }

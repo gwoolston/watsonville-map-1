@@ -83,6 +83,14 @@ $(window).on('load', function() {
    * Loads the basemap and adds it to the map
    */  
   function addBaseMap() {    
+    
+    // Define initial view parameters
+    var initialCenter = [36.91029104437439, -121.75611790937582];
+    var initialZoom = 15;
+
+    // Set initial view of the map
+    map.setView(initialCenter, initialZoom, { animate: false });
+    
     var basemap = trySetting('_tileProvider', 'Stamen.TonerLite');
     L.tileLayer.provider(basemap, {
       maxZoom: 18,
@@ -270,9 +278,9 @@ $(window).on('load', function() {
 
       container
         .append('<p class="chapter-header">' + c['Chapter'] + '</p>')
+        .append('<p class="date">' + c['Date'] + '</p>')
         .append(media ? mediaContainer : '')
         .append(media ? source : '')
-        .append('<p class="date">' + c['Date'] + '</p>')
         .append('<p class="description">' + c['Description'] + '</p>')
         .append('<p class="sources">' + c['Sources'] + '</p>');
       $('#contents').append(container);
