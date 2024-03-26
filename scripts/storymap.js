@@ -202,7 +202,7 @@ L.control.layers(basemaps).addTo(map);
         chapterCount += 1;
 
         markers.push(
-          L.marker([lat, lon], {
+          L.marker([lat, lon, true], {
             icon: L.ExtraMarkers.icon({
               icon: 'fa-number',
               number: c['Marker'] === 'Numbered'
