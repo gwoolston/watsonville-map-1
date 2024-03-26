@@ -91,22 +91,48 @@ $(window).on('load', function() {
     // Set initial view of the map
     map.setView(initialCenter, initialZoom, { animate: false });
     
-    var basemap = trySetting('_tileProvider', 'Stamen.TonerLite');
-    L.tileLayer.provider(basemap, {
-      maxZoom: 18,
+    // Define basemaps
+  var darkBasemap = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
+  attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  minZoom: 0,
+  maxZoom: 18
+});
 
-      // Pass the api key to most commonly used parameters
-      apiKey: trySetting('_tileProviderApiKey', ''),
-      apikey: trySetting('_tileProviderApiKey', ''),
-      key: trySetting('_tileProviderApiKey', ''),
-      accessToken: trySetting('_tileProviderApiKey', ''),
+var lightBasemap = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png', {
+  minZoom: 0,
+  maxZoom: 18,
+  attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+});
+
+// Add both basemaps to the map
+darkBasemap.addTo(map); // Default basemap
+
+// Create an object to hold basemap options
+var basemaps = {
+  "Dark Basemap": darkBasemap,
+  "Light Basemap": lightBasemap
+};
+
+// Add layer control to switch between basemaps
+L.control.layers(basemaps).addTo(map);
+
+    
+    // var basemap = trySetting('_tileProvider', 'Stamen.TonerLite');
+    // L.tileLayer.provider(basemap, {
+    //   maxZoom: 18,
+
+    //   // Pass the api key to most commonly used parameters
+    //   apiKey: trySetting('_tileProviderApiKey', ''),
+    //   apikey: trySetting('_tileProviderApiKey', ''),
+    //   key: trySetting('_tileProviderApiKey', ''),
+    //   accessToken: trySetting('_tileProviderApiKey', ''),
   
-      // Add the zoomAnimation and zoomControl options
-      zoomAnimation: false, // Disable zoom animation
-    }).addTo(map);
+    //   // Add the zoomAnimation and zoomControl options
+    //   zoomAnimation: false, // Disable zoom animation
+    // }).addTo(map);
 
-    // Disable animation on load (again)
-    map.setView([36.91029104437439, -121.75611790937582], 15, { animate: false });
+    // // Disable animation on load (again)
+    // map.setView([36.91029104437439, -121.75611790937582], 15, { animate: false });
 
     // Disable default zoom control (again)
     map.zoomControl.remove();
@@ -355,7 +381,7 @@ $(window).on('load', function() {
                   style: function(feature) {
                     return {
                       fillColor: feature.properties.fillColor || '#ffffff',
-                      weight: feature.properties.weight || 2,
+                      weight: feature.properties.weight || 2.5,
                       opacity: feature.properties.opacity || opacity,
                       color: feature.properties.color || '#82af5a',
                       fillOpacity: feature.properties.fillOpacity || 0.5,
@@ -389,7 +415,7 @@ $(window).on('load', function() {
                 style: function(feature) {
                   return {
                     fillColor: feature.properties.fillColor || props.fillColor || '#ffffff',
-                    weight: feature.properties.weight || props.weight || 2,
+                    weight: feature.properties.weight || props.weight || 2.5,
                     opacity: feature.properties.opacity || props.opacity || 0.5,
                     color: feature.properties.color || props.color || '#82af5a',
                     fillOpacity: feature.properties.fillOpacity || props.fillOpacity || 0.5,
