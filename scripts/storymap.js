@@ -355,9 +355,9 @@ $(window).on('load', function() {
                   style: function(feature) {
                     return {
                       fillColor: feature.properties.fillColor || '#ffffff',
-                      weight: feature.properties.weight || 1,
+                      weight: feature.properties.weight || 2,
                       opacity: feature.properties.opacity || opacity,
-                      color: feature.properties.color || '#cccccc',
+                      color: feature.properties.color || '#82af5a',
                       fillOpacity: feature.properties.fillOpacity || 0.5,
                     }
                   }
@@ -389,9 +389,9 @@ $(window).on('load', function() {
                 style: function(feature) {
                   return {
                     fillColor: feature.properties.fillColor || props.fillColor || '#ffffff',
-                    weight: feature.properties.weight || props.weight || 1,
+                    weight: feature.properties.weight || props.weight || 2,
                     opacity: feature.properties.opacity || props.opacity || 0.5,
-                    color: feature.properties.color || props.color || '#cccccc',
+                    color: feature.properties.color || props.color || '#82af5a',
                     fillOpacity: feature.properties.fillOpacity || props.fillOpacity || 0.5,
                   }
                 }
