@@ -247,7 +247,20 @@ L.control.layers(basemaps).addTo(map);
           class: 'source'
         });
       }
-
+      var source2 = '';
+      if (c['Media Credit Link']) {
+        source = $('<a>', {
+          text: c['Media Credit'],
+          href: c['Media Credit Link'],
+          target: "_blank",
+          class: 'source'
+        });
+      } else {
+        source = $('<span>', {
+          text: c['Media Credit'],
+          class: 'source'
+        });
+      }
       // YouTube
       if (c['Media Link'] && c['Media Link'].indexOf('youtube.com/') > -1) {
         media = $('<iframe></iframe>', {
