@@ -249,6 +249,20 @@ L.control.layers(basemaps).addTo(map);
           class: 'source'
         });
       }
+      var source2 = '';
+      if (c['Second Media Credit Link']) {
+        source2 = $('<a>', {
+          text: c['Second Media Credit'],
+          href: c['Second Media Credit Link'],
+          target: "_blank",
+          class: 'source2'
+        });
+      } else {
+        source2 = $('<span>', {
+          text: c['Second Media Credit'],
+          class: 'source2'
+        });
+      }
       // YouTube
       if (c['Media Link'] && c['Media Link'].indexOf('youtube.com/') > -1) {
         media = $('<iframe></iframe>', {
@@ -264,15 +278,15 @@ L.control.layers(basemaps).addTo(map);
           class: 'img-container'
         }).append(media).after(source);
       }
-    if (c['Second Media Link'] && c['Second Media Link'].indexOf('youtube.com/') > -1) {
-      secondMedia = $('<iframe></iframe>', {
-        src: c['Second Media Link'],
-        width: '100%',
-        height: '100%',
-        frameborder: '0',
-        allow: 'autoplay; encrypted-media',
-        allowfullscreen: 'allowfullscreen',
-      });
+      if (c['Second Media Link'] && c['Second Media Link'].indexOf('youtube.com/') > -1) {
+        secondMedia = $('<iframe></iframe>', {
+          src: c['Second Media Link'],
+          width: '100%',
+          height: '100%',
+          frameborder: '0',
+          allow: 'autoplay; encrypted-media',
+          allowfullscreen: 'allowfullscreen',
+        });
 
         secondMediaContainer = $('<div></div>', {
           class: 'img-container'
