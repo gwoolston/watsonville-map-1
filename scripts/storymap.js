@@ -290,7 +290,7 @@ L.control.layers(basemaps).addTo(map);
 
         secondMediaContainer = $('<div></div>', {
           class: 'img-container'
-        }).append(secondMedia).after(source);
+        }).append(secondMedia).after(source2);
       }
 
       // If not YouTube: either audio or image
@@ -303,7 +303,6 @@ L.control.layers(basemaps).addTo(map);
         'mp3': 'audio',
         'ogg': 'audio',
         'wav': 'audio',
-        'mp4': 'video'
       }
 
       var mediaExt = c['Media Link'] ? c['Media Link'].split('.').pop().toLowerCase() : '';
@@ -354,7 +353,7 @@ L.control.layers(basemaps).addTo(map);
 
         secondMediaContainer = $('<div></div', {
           class: secondMediaType + '-container'
-        }).append(secondMedia).after(source);
+        }).append(secondMedia).after(source2);
       }
       
       container
@@ -363,7 +362,7 @@ L.control.layers(basemaps).addTo(map);
         .append(media ? mediaContainer : '')
         .append(media ? source : '')
         .append(secondMedia ? secondMediaContainer : '')
-        .append(secondMedia ? source : '');
+        .append(secondMedia ? source2 : '');
         .append('<p class="description">' + c['Description'] + '</p>')
         .append('<p class="sources">' + c['Sources'] + '</p>');
       $('#contents').append(container);
