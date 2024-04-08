@@ -231,6 +231,8 @@ L.control.layers(basemaps).addTo(map);
       // Add media and credits: YouTube, audio, or image
       var media = null;
       var mediaContainer = null;
+      var secondMedia = null;
+      var secondMediaContainer = null;
 
       // Add media source
       var source = '';
@@ -262,6 +264,20 @@ L.control.layers(basemaps).addTo(map);
           class: 'img-container'
         }).append(media).after(source);
       }
+    if (c['Second Media Link'] && c['Second Media Link'].indexOf('youtube.com/') > -1) {
+      secondMedia = $('<iframe></iframe>', {
+        src: c['Second Media Link'],
+        width: '100%',
+        height: '100%',
+        frameborder: '0',
+        allow: 'autoplay; encrypted-media',
+        allowfullscreen: 'allowfullscreen',
+      });
+
+        secondMediaContainer = $('<div></div>', {
+          class: 'img-container'
+        }).append(secondMedia).after(source);
+      }
 
       // If not YouTube: either audio or image
       var mediaTypes = {
@@ -273,11 +289,14 @@ L.control.layers(basemaps).addTo(map);
         'mp3': 'audio',
         'ogg': 'audio',
         'wav': 'audio',
+        'mp4': 'video'
       }
 
       var mediaExt = c['Media Link'] ? c['Media Link'].split('.').pop().toLowerCase() : '';
       var mediaType = mediaTypes[mediaExt];
-
+      var secondMediaExt = c['Second Media Link'] ? c['Second Media Link'].split('.').pop().toLowerCase() : '';
+      var secondMediaType = mediaTypes[secondMediaExt];
+      
       if (mediaType) {
         media = $('<' + mediaType + '>', {
           src: c['Media Link'],
@@ -300,12 +319,37 @@ L.control.layers(basemaps).addTo(map);
           class: mediaType + '-container'
         }).append(media).after(source);
       }
+      
+      if (secondMediaType) {
+        secondMedia = $('<' + secondMediaType + '>', {
+          src: c['Second Media Link'],
+          controls: secondMediaType === 'audio' ? 'controls' : '',
+          alt: c['Chapter']
+        });
 
+        var enableLightbox = getSetting('_enableLightbox') === 'yes' ? true : false;
+        if (enableLightbox && secondMediaType === 'img') {
+          var lightboxWrapper = $('<a></a>', {
+            'data-lightbox': c['Second Media Link'],
+            'href': c['Second Media Link'],
+            'data-title': c['Chapter'],
+            'data-alt': c['Chapter'],
+          });
+          secondMedia = lightboxWrapper.append(secondMedia);
+        }
+
+        secondMediaContainer = $('<div></div', {
+          class: secondMediaType + '-container'
+        }).append(secondMedia).after(source);
+      }
+      
       container
         .append('<p class="chapter-header">' + c['Chapter'] + '</p>')
         .append('<p class="date">' + c['Date'] + '</p>')
         .append(media ? mediaContainer : '')
         .append(media ? source : '')
+        .append(secondMedia ? secondMediaContainer : '')
+        .append(secondMedia ? source : '');
         .append('<p class="description">' + c['Description'] + '</p>')
         .append('<p class="sources">' + c['Sources'] + '</p>');
       $('#contents').append(container);
