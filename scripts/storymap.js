@@ -233,6 +233,8 @@ L.control.layers(basemaps).addTo(map);
       var mediaContainer = null;
       var secondMedia = null;
       var secondMediaContainer = null;
+      var thirdMedia = null;
+      var thirdMediaContainer = null;
 
       // Add media source
       var source = '';
@@ -261,6 +263,20 @@ L.control.layers(basemaps).addTo(map);
         source2 = $('<span>', {
           text: c['Second Media Credit'],
           class: 'source2'
+        });
+      }
+      var source3 = '';
+      if (c['Third Media Credit Link']) {
+        source3 = $('<a>', {
+          text: c['Third Media Credit'],
+          href: c['Third Media Credit Link'],
+          target: "_blank",
+          class: 'source3'
+        });
+      } else {
+        source3 = $('<span>', {
+          text: c['Third Media Credit'],
+          class: 'source3'
         });
       }
       // YouTube
@@ -292,6 +308,20 @@ L.control.layers(basemaps).addTo(map);
           class: 'img-container'
         }).append(secondMedia).after(source2);
       }
+      if (c['Third Media Link'] && c['Third Media Link'].indexOf('youtube.com/') > -1) {
+        thirdMedia = $('<iframe></iframe>', {
+          src: c['Third Media Link'],
+          width: '100%',
+          height: '100%',
+          frameborder: '0',
+          allow: 'autoplay; encrypted-media',
+          allowfullscreen: 'allowfullscreen',
+        });
+
+        thirdMediaContainer = $('<div></div>', {
+          class: 'img-container'
+        }).append(thirdMedia).after(source3);
+      }
 
       // If not YouTube: either audio or image
       var mediaTypes = {
@@ -303,19 +333,30 @@ L.control.layers(basemaps).addTo(map);
         'mp3': 'audio',
         'ogg': 'audio',
         'wav': 'audio',
+        'mp4': 'video'
       }
 
       var mediaExt = c['Media Link'] ? c['Media Link'].split('.').pop().toLowerCase() : '';
       var mediaType = mediaTypes[mediaExt];
       var secondMediaExt = c['Second Media Link'] ? c['Second Media Link'].split('.').pop().toLowerCase() : '';
       var secondMediaType = mediaTypes[secondMediaExt];
+      var thirdMediaExt = c['Third Media Link'] ? c['Third Media Link'].split('.').pop().toLowerCase() : '';
+      var thirdMediaType = mediaTypes[thirdMediaExt];
       
       if (mediaType) {
-        media = $('<' + mediaType + '>', {
-          src: c['Media Link'],
-          controls: mediaType === 'audio' ? 'controls' : '',
-          alt: c['Chapter']
-        });
+        if (mediaType === 'video') {
+          media = $('<video controls></video>', {
+            src: c['Media Link'],
+            width: '100%',
+            height: 'auto'
+          });
+        } else {
+          media = $('<' + mediaType + '>', {
+            src: c['Media Link'],
+            controls: mediaType === 'audio' ? 'controls' : '',
+            alt: c['Chapter']
+          });
+        }
 
         var enableLightbox = getSetting('_enableLightbox') === 'yes' ? true : false;
         if (enableLightbox && mediaType === 'img') {
@@ -334,11 +375,19 @@ L.control.layers(basemaps).addTo(map);
       }
       
       if (secondMediaType) {
-        secondMedia = $('<' + secondMediaType + '>', {
-          src: c['Second Media Link'],
-          controls: secondMediaType === 'audio' ? 'controls' : '',
-          alt: c['Chapter']
-        });
+        if (secondMediaType === 'video') {
+          secondMedia = $('<video controls></video>', {
+            src: c['Second Media Link'],
+            width: '100%',
+            height: 'auto'
+          });
+        } else {
+          secondMedia = $('<' + secondMediaType + '>', {
+            src: c['Second Media Link'],
+            controls: secondMediaType === 'audio' ? 'controls' : '',
+            alt: c['Chapter']
+          });
+        }
 
         var enableLightbox = getSetting('_enableLightbox') === 'yes' ? true : false;
         if (enableLightbox && secondMediaType === 'img') {
@@ -355,7 +404,37 @@ L.control.layers(basemaps).addTo(map);
           class: secondMediaType + '-container'
         }).append(secondMedia).after(source2);
       }
-      
+
+      if (thirdMediaType) {
+        if (thirdMediaType === 'video') {
+          thirdMedia = $('<video controls></video>', {
+            src: c['Third Media Link'],
+            width: '100%',
+            height: 'auto'
+          });
+        } else {
+          thirdMedia = $('<' + thirdMediaType + '>', {
+            src: c['Third Media Link'],
+            controls: thirdMediaType === 'audio' ? 'controls' : '',
+            alt: c['Chapter']
+          });
+        }
+
+        var enableLightbox = getSetting('_enableLightbox') === 'yes' ? true : false;
+        if (enableLightbox && thirdMediaType === 'img') {
+          var lightboxWrapper = $('<a></a>', {
+            'data-lightbox': c['Third Media Link'],
+            'href': c['Third Media Link'],
+            'data-title': c['Chapter'],
+            'data-alt': c['Chapter'],
+          });
+          thirdMedia = lightboxWrapper.append(thirdMedia);
+        }
+
+        thirdMediaContainer = $('<div></div', {
+          class: thirdMediaType + '-container'
+        }).append(thirdMedia).after(source3);
+      }
       container
         .append('<p class="chapter-header">' + c['Chapter'] + '</p>')
         .append('<p class="date">' + c['Date'] + '</p>')
@@ -363,6 +442,8 @@ L.control.layers(basemaps).addTo(map);
         .append(media ? source : '')
         .append(secondMedia ? secondMediaContainer : '')
         .append(secondMedia ? source2 : '')
+        .append(thirdMedia ? thirdMediaContainer : '')
+        .append(thirdMedia ? source3 : '')
         .append('<p class="description">' + c['Description'] + '</p>')
         .append('<p class="sources">' + c['Sources'] + '</p>');
       $('#contents').append(container);
