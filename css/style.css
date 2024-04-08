@@ -37,7 +37,7 @@ body {
 }
 
 #space-at-the-bottom {
-  height: 200px;
+  height: 100px;
   margin: 0;
   text-align: center;
   padding-top: 150px;
@@ -80,7 +80,7 @@ body {
 }
 
 .img-container {
-  margin: 50px;
+  margin: auto;
   margin-bottom: 5px;
   height: 200px;
   max-height: 200px;
@@ -105,19 +105,19 @@ body {
 .source {
   font-size: 9pt;
   font-style: italic;
-  color: gray;
+  color: black;
 }
 
 .source2 {
   font-size: 9pt;
   font-style: italic;
-  color: gray;
+  color: black;
 }
 
 .source3 {
   font-size: 9pt;
   font-style: italic;
-  color: gray;
+  color: black;
 }
 
 a.source:visited {
