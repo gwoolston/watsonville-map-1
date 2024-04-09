@@ -5,6 +5,12 @@ body {
   overflow: hidden;
 }
 
+blockquote {
+        margin: 0;
+        padding: 10px;
+        border-left: 3px solid #ccc;
+    }
+
 #map {
   height: 200px;
   width: 100vw;
