@@ -236,30 +236,6 @@ L.control.layers(basemaps).addTo(map);
       var thirdMedia = null;
       var thirdMediaContainer = null;
 
-      // Add video player
-      function addVideoPlayer(containerId, videoUrl) {
-        var videoContainer = $('<div></div>', {
-            class: 'video-container',
-            id: 'video-container-' + containerId
-        });
-        var videoPlayer = $('<video controls></video>', {
-            class: 'leaflet-video-player',
-            id: 'leaflet-video-player-' + containerId,
-            src: videoUrl,
-            type: 'video/mp4'
-        });
-        videoContainer.append(videoPlayer);
-        $('#container' + containerId).append(videoContainer);
-      }
-      
-       for (var i = 0; i < chapters.length; i++) {
-        var chapter = chapters[i];
-        var videoUrl = chapter['Third Media Link'];
-        if (videoUrl && videoUrl.indexOf('.mp4') !== -1) {
-            addVideoPlayer(i, videoUrl);
-        }
-      }
-      
       // Add media source
       var source = '';
       if (c['Media Credit Link']) {
