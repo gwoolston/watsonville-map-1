@@ -247,19 +247,19 @@ L.control.layers(basemaps).addTo(map);
             id: 'leaflet-video-player-' + containerId,
             src: videoUrl,
             type: 'video/mp4'
-        });    
+        });
         videoContainer.append(videoPlayer);
         $('#container' + containerId).append(videoContainer);
       }
       
-      for (var i = 0; i < chapters.length; i++) {
+       for (var i = 0; i < chapters.length; i++) {
         var chapter = chapters[i];
         var videoUrl = chapter['Third Media Link'];
         if (videoUrl && videoUrl.indexOf('.mp4') !== -1) {
             addVideoPlayer(i, videoUrl);
         }
       }
-
+      
       // Add media source
       var source = '';
       if (c['Media Credit Link']) {
