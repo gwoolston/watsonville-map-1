@@ -101,6 +101,14 @@ blockquote {
   width: 100%;
 }
 
+.video-container {
+  margin: auto;
+  margin-bottom: 5px;
+  height: 200px;
+  max-height: 200px;
+  width: 100%;
+}
+
 .chapter-header {
   display: block;
   text-align: center;
