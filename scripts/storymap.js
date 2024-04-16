@@ -442,10 +442,10 @@ L.control.layers(basemaps).addTo(map);
         .append(media ? source : '')
         .append(secondMedia ? secondMediaContainer : '')
         .append(secondMedia ? source2 : '')
-        .append(thirdMedia ? thirdMediaContainer : '')
-        .append(thirdMedia ? source3 : '')
         .append('<p class="description">' + c['Description'] + '</p>')
-        .append('<p class="sources">' + c['Sources'] + '</p>');
+        .append('<p class="sources">' + c['Sources'] + '</p>')
+        .append(thirdMedia ? thirdMediaContainer : '')
+        .append(thirdMedia ? source3 : '');
       $('#contents').append(container);
 
     }
