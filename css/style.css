@@ -5,12 +5,6 @@ body {
   overflow: hidden;
 }
 
-blockquote {
-        margin: 0;
-        padding: 10px;
-        border-left: 3px solid #ccc;
-    }
-
 #map {
   height: 200px;
   width: 100vw;
@@ -141,8 +135,14 @@ a.source:visited {
 .description {
   margin: 20px;
   text-align: left;
-  font-size: 11pt;
+  font-size: 14pt;
   padding: 20px;
+}
+
+blockquote {
+  margin: 20px;
+  padding: 10px;
+  text-align: center;
 }
 
 .sources {
