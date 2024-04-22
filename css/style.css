@@ -149,9 +149,13 @@ a.source:visited {
 }
 
 blockquote {
+  font-style: italic;
+  font-weight: bold;
   margin: 20px;
   padding: 0px;
+  font-size: 12pt;
   text-align: center;
+  
 }
 
 .sources {
