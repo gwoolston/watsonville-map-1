@@ -179,7 +179,10 @@ L.control.layers(basemaps).addTo(map);
 
           if (i == k) {
             /* Adds marker-active class, which is orange, to marker k */
-            markers[k]._icon.className += ' marker-active';
+            markers[k].setIcon(L.ExtraMarkers.icon({
+            icon: 'fa-number',
+            number: markers[k].options.number,
+            markerColor: 'red'
           }
         }
       }
