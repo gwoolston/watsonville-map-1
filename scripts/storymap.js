@@ -182,7 +182,7 @@ L.control.layers(basemaps).addTo(map);
             markers[k].setIcon(L.ExtraMarkers.icon({
             icon: 'fa-number',
             number: markers[k].options.number,
-            markerColor: 'red'
+            markerColor: 'red')
           }
         }
       }
