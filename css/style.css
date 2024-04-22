@@ -111,25 +111,25 @@ body {
 }
 
 .source {
-  font-size: 9pt;
+  font-size: 10pt;
   font-style: italic;
-  color: black;
+  color: #382b13;
 }
 
 .source2 {
-  font-size: 9pt;
+  font-size: 10pt;
   font-style: italic;
-  color: black;
+  color: #382b13;
 }
 
 .source3 {
-  font-size: 9pt;
+  font-size: 10pt;
   font-style: italic;
-  color: black;
+  color: #382b13;
 }
 
 a.source:visited {
-  color: black;
+  color: #382b13;
 }
 
 .description {
@@ -142,7 +142,7 @@ a.source:visited {
 
 blockquote {
   margin: 20px;
-  padding: 5px;
+  padding: 0px;
   text-align: center;
 }
 
@@ -175,7 +175,7 @@ blockquote {
   If you want to change the color, see options here: https://github.com/coryasilva/Leaflet.ExtraMarkers/blob/master/src/assets/css/leaflet.extra-markers.css
 */
 .marker-active {
-  background-color: orange-dark;
+  background-color: red;
   background-position: -72px 0 !important;
 }
 
