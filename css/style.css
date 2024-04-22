@@ -137,11 +137,12 @@ a.source:visited {
   text-align: left;
   font-size: 12pt;
   padding: 20px;
+  line-height: 1.5;
 }
 
 blockquote {
   margin: 20px;
-  padding: 10px;
+  padding: 5px;
   text-align: center;
 }
 
