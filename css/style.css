@@ -113,27 +113,30 @@ body {
 }
 
 .source {
+  margin: 20px;
   font-size: 10pt;
   font-style: italic;
   font-family: "Calibri", sans-serif;
   color: #382b13;
-  margin: 25px;
+  padding-bottom: 20px;
 }
 
 .source2 {
+  margin: 20px;
   font-size: 10pt;
   font-style: italic;
   font-family: "Calibri", sans-serif;
   color: #382b13;
-  margin: 25px;
+  padding-bottom: 20px;
 }
 
 .source3 {
+  margin: 20px;
   font-size: 10pt;
   font-style: italic;
   font-family: "Calibri", sans-serif;
   color: #382b13;
-  margin: 25px;
+  padding-bottom: 20px;
 }
 
 a.source:visited {
