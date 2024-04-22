@@ -178,8 +178,7 @@ blockquote {
   If you want to change the color, see options here: https://github.com/coryasilva/Leaflet.ExtraMarkers/blob/master/src/assets/css/leaflet.extra-markers.css
 */
 .marker-active {
-  color: orange-dark;
-  background-position: -72px 0 !important;
+  background-position: -36px 0 !important;
 }
 
 /* Storymap logo image above the title */
