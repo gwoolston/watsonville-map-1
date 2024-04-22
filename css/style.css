@@ -114,21 +114,21 @@ body {
   font-size: 10pt;
   font-style: italic;
   color: #382b13;
-  margin: 20px;
+  margin: 25px;
 }
 
 .source2 {
   font-size: 10pt;
   font-style: italic;
   color: #382b13;
-  margin: 20px;
+  margin: 25px;
 }
 
 .source3 {
   font-size: 10pt;
   font-style: italic;
   color: #382b13;
-  margin: 20px;
+  margin: 25px;
 }
 
 a.source:visited {
@@ -152,7 +152,7 @@ blockquote {
 .sources {
   font-size: 14px;
   font-style: italic;
-  color: #333;
+  color: #382b13;
   margin-top: 5px;
   padding-bottom: 20px;
 }
