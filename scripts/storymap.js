@@ -228,225 +228,212 @@ L.control.layers(basemaps).addTo(map);
       });
 
 
-      // Add media and credits: YouTube, audio, or image
-      var media = null;
-      var mediaContainer = null;
-      var secondMedia = null;
-      var secondMediaContainer = null;
-      var thirdMedia = null;
-      var thirdMediaContainer = null;
-
-      // Add media source
-      var source = '';
-      if (c['Media Credit Link']) {
-        source = $('<a>', {
-          text: c['Media Credit'],
-          href: c['Media Credit Link'],
-          target: "_blank",
-          class: 'source'
-        });
-      } else {
-        source = $('<span>', {
-          text: c['Media Credit'],
-          class: 'source'
-        });
-      }
-      var source2 = '';
-      if (c['Second Media Credit Link']) {
-        source2 = $('<a>', {
-          text: c['Second Media Credit'],
-          href: c['Second Media Credit Link'],
-          target: "_blank",
-          class: 'source2'
-        });
-      } else {
-        source2 = $('<span>', {
-          text: c['Second Media Credit'],
-          class: 'source2'
-        });
-      }
-      var source3 = '';
-      if (c['Third Media Credit Link']) {
-        source3 = $('<a>', {
-          text: c['Third Media Credit'],
-          href: c['Third Media Credit Link'],
-          target: "_blank",
-          class: 'source3'
-        });
-      } else {
-        source3 = $('<span>', {
-          text: c['Third Media Credit'],
-          class: 'source3'
-        });
-      }
-      // YouTube
-      if (c['Media Link'] && c['Media Link'].indexOf('youtube.com/') > -1) {
-        media = $('<iframe></iframe>', {
-          src: c['Media Link'],
-          width: '100%',
-          height: '100%',
-          frameborder: '0',
-          allow: 'autoplay; encrypted-media',
-          allowfullscreen: 'allowfullscreen',
-        });
-
-        mediaContainer = $('<div></div>', {
-          class: 'img-container'
-        }).append(media).after(source);
-      }
-      if (c['Second Media Link'] && c['Second Media Link'].indexOf('youtube.com/') > -1) {
-        secondMedia = $('<iframe></iframe>', {
-          src: c['Second Media Link'],
-          width: '100%',
-          height: '100%',
-          frameborder: '0',
-          allow: 'autoplay; encrypted-media',
-          allowfullscreen: 'allowfullscreen',
-        });
-
-        secondMediaContainer = $('<div></div>', {
-          class: 'img-container'
-        }).append(secondMedia).after(source2);
-      }
-      if (c['Third Media Link'] && c['Third Media Link'].indexOf('youtube.com/') > -1) {
-        thirdMedia = $('<iframe></iframe>', {
-          src: c['Third Media Link'],
-          width: '100%',
-          height: '100%',
-          frameborder: '0',
-          allow: 'autoplay; encrypted-media',
-          allowfullscreen: 'allowfullscreen',
-        });
-
-        thirdMediaContainer = $('<div></div>', {
-          class: 'img-container'
-        }).append(thirdMedia).after(source3);
-      }
-
-      // If not YouTube: either audio or image
-      var mediaTypes = {
-        'jpg': 'img',
-        'jpeg': 'img',
-        'png': 'img',
-        'tiff': 'img',
-        'gif': 'img',
-        'mp3': 'audio',
-        'ogg': 'audio',
-        'wav': 'audio',
-        'mp4': 'video'
-      }
-
-      var mediaExt = c['Media Link'] ? c['Media Link'].split('.').pop().toLowerCase() : '';
-      var mediaType = mediaTypes[mediaExt];
-      var secondMediaExt = c['Second Media Link'] ? c['Second Media Link'].split('.').pop().toLowerCase() : '';
-      var secondMediaType = mediaTypes[secondMediaExt];
-      var thirdMediaExt = c['Third Media Link'] ? c['Third Media Link'].split('.').pop().toLowerCase() : '';
-      var thirdMediaType = mediaTypes[thirdMediaExt];
+            // Add media and credits: YouTube, audio, or image
+            var media = null;
+            var mediaContainer = null;
+            var secondMedia = null;
+            var secondMediaContainer = null;
+            var thirdMedia = null;
+            var thirdMediaContainer = null;
       
-      if (mediaType) {
-        if (mediaType === 'video') {
-          media = $('<video controls></video>', {
-            src: c['Media Link'],
-            width: '100%',
-            height: 'auto'
-          });
-        } else {
-          media = $('<' + mediaType + '>', {
-            src: c['Media Link'],
-            controls: mediaType === 'audio' ? 'controls' : '',
-            alt: c['Chapter']
-          });
-        }
+            // Add media source
+            var source = '';
+            if (c['Media Credit Link']) {
+              source = $('<a>', {
+                text: c['Media Credit'],
+                href: c['Media Credit Link'],
+                target: "_blank",
+                class: 'source'
+              });
+            } else {
+              source = $('<span>', {
+                text: c['Media Credit'],
+                class: 'source'
+              });
+            }
+            var source2 = '';
+            if (c['Second Media Credit Link']) {
+              source2 = $('<a>', {
+                text: c['Second Media Credit'],
+                href: c['Second Media Credit Link'],
+                target: "_blank",
+                class: 'source2'
+              });
+            } else {
+              source2 = $('<span>', {
+                text: c['Second Media Credit'],
+                class: 'source2'
+              });
+            }
+            var source3 = '';
+            if (c['Third Media Credit Link']) {
+              source3 = $('<a>', {
+                text: c['Third Media Credit'],
+                href: c['Third Media Credit Link'],
+                target: "_blank",
+                class: 'source3'
+              });
+            } else {
+              source3 = $('<span>', {
+                text: c['Third Media Credit'],
+                class: 'source3'
+              });
+            }
 
-        var enableLightbox = getSetting('_enableLightbox') === 'yes' ? true : false;
-        if (enableLightbox && mediaType === 'img') {
-          var lightboxWrapper = $('<a></a>', {
-            'data-lightbox': c['Media Link'],
-            'href': c['Media Link'],
-            'data-title': c['Chapter'],
-            'data-alt': c['Chapter'],
-          });
-          media = lightboxWrapper.append(media);
-        }
+            // Video
+            if (c['Media Link'] && c['Media Link'].endsWith('.mp4')) {
+              media = $('<video></video>', {
+                src: c['Media Link'],
+                controls: 'controls',
+                width: '100%',
+                height: '100%'
+              });
+            
+              mediaContainer = $('<div></div>', {
+                class: 'video-container'
+              }).append(media).after(source);
+            }
 
-        mediaContainer = $('<div></div', {
-          class: mediaType + '-container'
-        }).append(media).after(source);
-      }
+            if (c['Second Media Link'] && c['Second Media Link'].endsWith('.mp4')) {
+              secondMedia = $('<video></video>', {
+                src: c['Second Media Link'],
+                controls: 'controls',
+                width: '100%',
+                height: '100%'
+              });
+            
+              secondMediaContainer = $('<div></div>', {
+                class: 'video-container'
+              }).append(secondMedia).after(source2);
+            }
+
+            if (c['Third Media Link'] && c['Third Media Link'].indexOf('youtube.com/') > -1) {
+              thirdMedia = $('<iframe></iframe>', {
+                src: c['Third Media Link'],
+                width: '100%',
+                height: '100%',
+                frameborder: '0',
+                allow: 'autoplay; encrypted-media',
+                allowfullscreen: 'allowfullscreen',
+              });
       
-      if (secondMediaType) {
-        if (secondMediaType === 'video') {
-          secondMedia = $('<video controls></video>', {
-            src: c['Second Media Link'],
-            width: '100%',
-            height: 'auto'
-          });
-        } else {
-          secondMedia = $('<' + secondMediaType + '>', {
-            src: c['Second Media Link'],
-            controls: secondMediaType === 'audio' ? 'controls' : '',
-            alt: c['Chapter']
-          });
-        }
-
-        var enableLightbox = getSetting('_enableLightbox') === 'yes' ? true : false;
-        if (enableLightbox && secondMediaType === 'img') {
-          var lightboxWrapper = $('<a></a>', {
-            'data-lightbox': c['Second Media Link'],
-            'href': c['Second Media Link'],
-            'data-title': c['Chapter'],
-            'data-alt': c['Chapter'],
-          });
-          secondMedia = lightboxWrapper.append(secondMedia);
-        }
-
-        secondMediaContainer = $('<div></div', {
-          class: secondMediaType + '-container'
-        }).append(secondMedia).after(source2);
-      }
-
-      if (thirdMediaType) {
-        if (thirdMediaType === 'video') {
-          thirdMedia = $('<video controls></video>', {
-            src: c['Third Media Link'],
-            width: '100%',
-            height: 'auto'
-          });
-        } else {
-          thirdMedia = $('<' + thirdMediaType + '>', {
-            src: c['Third Media Link'],
-            controls: thirdMediaType === 'audio' ? 'controls' : '',
-            alt: c['Chapter']
-          });
-        }
-
-        var enableLightbox = getSetting('_enableLightbox') === 'yes' ? true : false;
-        if (enableLightbox && thirdMediaType === 'img') {
-          var lightboxWrapper = $('<a></a>', {
-            'data-lightbox': c['Third Media Link'],
-            'href': c['Third Media Link'],
-            'data-title': c['Chapter'],
-            'data-alt': c['Chapter'],
-          });
-          thirdMedia = lightboxWrapper.append(thirdMedia);
-        }
-
-        thirdMediaContainer = $('<div></div', {
-          class: thirdMediaType + '-container'
-        }).append(thirdMedia).after(source3);
-      }
-      container
-        .append('<p class="chapter-header">' + c['Chapter'] + '</p>')
-        .append('<p class="date">' + c['Date'] + '</p>')
-        .append(media ? mediaContainer : '')
-        .append(media ? source : '')
-        .append(secondMedia ? secondMediaContainer : '')
-        .append(secondMedia ? source2 : '')
-        .append('<p class="description">' + c['Description'] + '</p>')
-        .append('<p class="sources">' + c['Sources'] + '</p>')
-        .append(thirdMedia ? thirdMediaContainer : '')
-        .append(thirdMedia ? source3 : '');
-      $('#contents').append(container);
+              thirdMediaContainer = $('<div></div>', {
+                class: 'img-container'
+              }).append(thirdMedia).after(source3);
+            }
+      
+            // If not YouTube: either audio or image
+            var mediaTypes = {
+              'jpg': 'img',
+              'jpeg': 'img',
+              'png': 'img',
+              'tiff': 'img',
+              'gif': 'img',
+              'mp3': 'audio',
+              'ogg': 'audio',
+              'wav': 'audio'
+            }
+      
+            var mediaExt = c['Media Link'] ? c['Media Link'].split('.').pop().toLowerCase() : '';
+            var mediaType = mediaTypes[mediaExt];
+            var secondMediaExt = c['Second Media Link'] ? c['Second Media Link'].split('.').pop().toLowerCase() : '';
+            var secondMediaType = mediaTypes[secondMediaExt];
+            var thirdMediaExt = c['Third Media Link'] ? c['Third Media Link'].split('.').pop().toLowerCase() : '';
+            var thirdMediaType = mediaTypes[thirdMediaExt];
+            
+            if (mediaType) {
+              if (mediaType === 'video') {
+                media = $('<video controls></video>', {
+                  src: c['Media Link'],
+                  width: '100%',
+                  height: 'auto'
+                });
+              } else {
+                media = $('<' + mediaType + '>', {
+                  src: c['Media Link'],
+                  controls: mediaType === 'audio' ? 'controls' : '',
+                  alt: c['Chapter']
+                });
+              }
+      
+              mediaContainer = $('<div></div', {
+                class: mediaType + '-container'
+              }).append(media).after(source);
+            }
+            
+            if (secondMediaType) {
+              if (secondMediaType === 'video') {
+                secondMedia = $('<video controls></video>', {
+                  src: c['Second Media Link'],
+                  width: '100%',
+                  height: 'auto'
+                });
+              } else {
+                secondMedia = $('<' + secondMediaType + '>', {
+                  src: c['Second Media Link'],
+                  controls: secondMediaType === 'audio' ? 'controls' : '',
+                  alt: c['Chapter']
+                });
+              }
+      
+              var enableLightbox = getSetting('_enableLightbox') === 'yes' ? true : false;
+              if (enableLightbox && secondMediaType === 'img') {
+                var lightboxWrapper = $('<a></a>', {
+                  'data-lightbox': c['Second Media Link'],
+                  'href': c['Second Media Link'],
+                  'data-title': c['Chapter'],
+                  'data-alt': c['Chapter'],
+                });
+                secondMedia = lightboxWrapper.append(secondMedia);
+              }
+      
+              secondMediaContainer = $('<div></div', {
+                class: secondMediaType + '-container'
+              }).append(secondMedia).after(source2);
+            }
+      
+            if (thirdMediaType) {
+              if (thirdMediaType === 'video') {
+                thirdMedia = $('<video controls></video>', {
+                  src: c['Third Media Link'],
+                  width: '100%',
+                  height: 'auto'
+                });
+              } else {
+                thirdMedia = $('<' + thirdMediaType + '>', {
+                  src: c['Third Media Link'],
+                  controls: thirdMediaType === 'audio' ? 'controls' : '',
+                  alt: c['Chapter']
+                });
+              }
+      
+              var enableLightbox = getSetting('_enableLightbox') === 'yes' ? true : false;
+              if (enableLightbox && thirdMediaType === 'img') {
+                var lightboxWrapper = $('<a></a>', {
+                  'data-lightbox': c['Third Media Link'],
+                  'href': c['Third Media Link'],
+                  'data-title': c['Chapter'],
+                  'data-alt': c['Chapter'],
+                });
+                thirdMedia = lightboxWrapper.append(thirdMedia);
+              }
+      
+              thirdMediaContainer = $('<div></div', {
+                class: thirdMediaType + '-container'
+              }).append(thirdMedia).after(source3);
+            }
+            container
+              .append('<p class="chapter-header">' + c['Chapter'] + '</p>')
+              .append('<p class="date">' + c['Date'] + '</p>')
+              .append(media ? mediaContainer : '')
+              .append(media ? source : '')
+              .append('<p class="description">' + c['Description'] + '</p>')
+              .append(secondMedia ? secondMediaContainer : '')
+              .append(secondMedia ? source2 : '')
+              .append('<p class="sources">' + c['Sources'] + '</p>')
+              .append(thirdMedia ? thirdMediaContainer : '')
+              .append(thirdMedia ? source3 : '');
+            $('#contents').append(container);
 
     }
 
