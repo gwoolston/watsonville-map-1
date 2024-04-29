@@ -81,11 +81,22 @@ body {
 }
 
 .img-container {
-  margin: auto;
+  margin: 20px auto;
   margin-bottom: 5px;
-  height: 200px;
-  max-height: 200px;
-  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+.img-container img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.video-container video {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .audio-container {
@@ -97,11 +108,10 @@ body {
 }
 
 .video-container {
-  margin: auto;
+  margin: 20px auto;
   margin-bottom: 5px;
-  height: 200px;
-  max-height: 200px;
-  width: 100%;
+  height: auto;
+  max-width: 100%;
 }
 
 .chapter-header {
