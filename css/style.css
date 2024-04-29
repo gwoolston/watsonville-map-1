@@ -147,17 +147,20 @@ a.source:visited {
   margin: 20px;
   text-align: left;
   font-size: 12pt;
+  font-weight: bold; 
+  color: #382b13;
   padding: 15px;
   line-height: 1.5;
 }
+
 .date { 
   margin: 20px;
   font-family: "Calibri", sans-serif;
   color: #382b13;
-  text-align: left;
-  font-size: 12pt;
+  font-style: italic;
+  text-align: center;
+  font-size: 11pt;
   padding: 10px;
-  line-height: 1.5;
 }
 
 blockquote {
