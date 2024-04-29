@@ -150,6 +150,15 @@ a.source:visited {
   padding: 15px;
   line-height: 1.5;
 }
+.date { 
+  margin: 20px;
+  font-family: "Calibri", sans-serif;
+  color: #382b13;
+  text-align: left;
+  font-size: 12pt;
+  padding: 10px;
+  line-height: 1.5;
+}
 
 blockquote {
   font-style: italic;
