@@ -93,12 +93,6 @@ body {
   height: auto;
 }
 
-.video-container video {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
 .audio-container {
   margin: 0;
   margin-bottom: 5px;
@@ -112,6 +106,12 @@ body {
   margin-bottom: 5px;
   height: auto;
   max-width: 100%;
+}
+
+.video-container video {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .chapter-header {
