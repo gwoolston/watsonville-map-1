@@ -428,7 +428,7 @@ L.control.layers(basemaps).addTo(map);
     }
 
     // For each block (chapter), calculate how many pixels above it
-    pixelsAbove[0] = -100;
+    pixelsAbove[0] = 100;
     for (i = 1; i < chapters.length; i++) {
       pixelsAbove[i] = pixelsAbove[i-1] + $('div#container' + (i-1)).height() + chapterContainerMargin;
     }
