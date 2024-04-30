@@ -376,17 +376,6 @@ L.control.layers(basemaps).addTo(map);
                 });
               }
       
-              var enableLightbox = getSetting('_enableLightbox') === 'yes' ? true : false;
-              if (enableLightbox && secondMediaType === 'img') {
-                var lightboxWrapper = $('<a></a>', {
-                  'data-lightbox': c['Second Media Link'],
-                  'href': c['Second Media Link'],
-                  'data-title': c['Chapter'],
-                  'data-alt': c['Chapter'],
-                });
-                secondMedia = lightboxWrapper.append(secondMedia);
-              }
-      
               secondMediaContainer = $('<div></div', {
                 class: secondMediaType + '-container'
               }).append(secondMedia).after(source2);
@@ -407,33 +396,23 @@ L.control.layers(basemaps).addTo(map);
                 });
               }
       
-              var enableLightbox = getSetting('_enableLightbox') === 'yes' ? true : false;
-              if (enableLightbox && thirdMediaType === 'img') {
-                var lightboxWrapper = $('<a></a>', {
-                  'data-lightbox': c['Third Media Link'],
-                  'href': c['Third Media Link'],
-                  'data-title': c['Chapter'],
-                  'data-alt': c['Chapter'],
-                });
-                thirdMedia = lightboxWrapper.append(thirdMedia);
-              }
-      
               thirdMediaContainer = $('<div></div', {
                 class: thirdMediaType + '-container'
               }).append(thirdMedia).after(source3);
             }
             container
-              .append('<p class="chapter-header">' + c['Chapter'] + '</p>')
-              .append('<p class="date">' + c['Date'] + '</p>')
-              .append(media ? mediaContainer : '')
-              .append(media ? source : '')
-              .append('<p class="description">' + c['Description'] + '</p>')
-              .append(secondMedia ? secondMediaContainer : '')
-              .append(secondMedia ? source2 : '')
-              .append('<p class="sources">' + c['Sources'] + '</p>')
-              .append(thirdMedia ? thirdMediaContainer : '')
-              .append(thirdMedia ? source3 : '');
-            $('#contents').append(container);
+            .append('<p class="chapter-header">' + c['Chapter'] + '</p>')
+            .append('<p class="date">' + c['Date'] + '</p>')
+            .append(media ? mediaContainer : '')
+            .append(media ? source : '')
+            .append('<p class="description">' + c['Description'] + '</p>')
+            .append(secondMedia ? secondMediaContainer : '')
+            .append(secondMedia ? source2 : '')
+            .append(c['Sources'] ? '<p class="sources">' + c['Sources'] + '</p>' : '')
+            .append(thirdMedia ? thirdMediaContainer : '')
+            .append(thirdMedia ? source3 : '');
+        
+        $('#contents').append(container);
 
     }
 
