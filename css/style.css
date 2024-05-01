@@ -184,6 +184,7 @@ blockquote {
   font-size: 11pt;
   text-align: center;
   padding-bottom: 10px;
+  line-height: 1;
 }
 
 .in-focus {
