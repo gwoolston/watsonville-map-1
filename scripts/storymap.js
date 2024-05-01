@@ -408,7 +408,6 @@ L.control.layers(basemaps).addTo(map);
             .append('<p class="description">' + c['Description'] + '</p>')
             .append(secondMedia ? secondMediaContainer : '')
             .append(secondMedia ? source2 : '')
-            .append(c['Sources'] ? '<p class="sources">' + c['Sources'] + '</p>' : '')
             .append(thirdMedia ? thirdMediaContainer : '')
             .append(thirdMedia ? source3 : '');
         
