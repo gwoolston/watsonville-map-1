@@ -123,33 +123,36 @@ body {
 }
 
 .source {
-  padding: 20px;
+  margin: 20px;
+  margin-top: 0px;
   padding-top: 10px;
   text-align: center;
   font-size: 10pt;
   font-family: "Calibri", sans-serif;
+  font-style: italic;
   color: #382b13;
-  margin-bottom: 20px;
 }
 
 .source2 {
-  padding: 20px;
+  margin: 20px;
+  margin-top: 0px;
   padding-top: 10px;
   text-align: center;
   font-size: 10pt;
   font-family: "Calibri", sans-serif;
+  font-style: italic;
   color: #382b13;
-  margin-bottom: 20px;
 }
 
 .source3 {
-  padding: 20px;
+  margin: 20px;
+  margin-top: 0px;
   padding-top: 10px;
   text-align: center;
   font-size: 10pt;
   font-family: "Calibri", sans-serif;
+  font-style: italic;
   color: #382b13;
-  margin-bottom: 20px;
 }
 
 a.source:visited {
