@@ -1,7 +1,6 @@
 body {
   padding: 0px;
   margin: 0px;
-  font-family: "Calibri," sans-serif;
   overflow: hidden;
 }
 
@@ -160,6 +159,7 @@ a.source:visited {
   margin: 20px;
   padding-bottom: 10px;
   text-align: left;
+  font-family: "Calibri," sans-serif;
   font-size: 12pt;
   color: #382b13;
   line-height: 1.5;
