@@ -129,7 +129,7 @@ body {
   font-style: italic;
   font-family: "Calibri", sans-serif;
   color: #382b13;
-  padding-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .source2 {
@@ -139,7 +139,7 @@ body {
   font-style: italic;
   font-family: "Calibri", sans-serif;
   color: #382b13;
-  padding-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .source3 {
@@ -149,7 +149,7 @@ body {
   font-style: italic;
   font-family: "Calibri", sans-serif;
   color: #382b13;
-  padding-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 a.source:visited {
