@@ -176,6 +176,8 @@ a.source:visited {
 blockquote {
   font-style: italic;
   margin: 20px;
+  margin-top: 0px;
+  margin-bottom: 0px;
   padding: 20px;
   padding-top: 10px;
   font-size: 12pt;
