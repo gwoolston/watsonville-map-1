@@ -72,7 +72,6 @@ body {
   max-height: 100%;
   max-width: 100%;
   margin: 20px auto;
-  background-color: #382b13;
 
   /* Three lines that center vertically */
   position: relative;
@@ -85,14 +84,12 @@ body {
   margin-bottom: 5px;
   height: auto;
   max-width: 100%;
-  background-color: #382b13;
 }
 
 .img-container img {
   display: block;
   max-width: 100%;
   height: auto;
-  background-color: #382b13;
 }
 
 .audio-container {
