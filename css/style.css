@@ -125,6 +125,7 @@ body {
 .source {
   padding: 20px;
   padding-top: 10px;
+  text-align: center;
   font-size: 10pt;
   font-style: italic;
   font-family: "Calibri", sans-serif;
@@ -135,6 +136,7 @@ body {
 .source2 {
   padding: 20px;
   padding-top: 10px;
+  text-align: center;
   font-size: 10pt;
   font-style: italic;
   font-family: "Calibri", sans-serif;
@@ -145,6 +147,7 @@ body {
 .source3 {
   padding: 20px;
   padding-top: 10px;
+  text-align: center;
   font-size: 10pt;
   font-style: italic;
   font-family: "Calibri", sans-serif;
