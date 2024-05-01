@@ -84,12 +84,14 @@ body {
   margin-bottom: 5px;
   height: auto;
   max-width: 100%;
+  background-color: #382b13;
 }
 
 .img-container img {
   display: block;
   max-width: 100%;
   height: auto;
+  background-color: #382b13;
 }
 
 .audio-container {
