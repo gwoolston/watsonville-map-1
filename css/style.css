@@ -160,7 +160,7 @@ a.source:visited {
   padding-bottom: 10px;
   text-align: left;
   font-family: "Calibri", sans-serif;
-  font-size: 12pt;
+  font-size: 11pt;
   color: #382b13;
   line-height: 1.5;
 }
@@ -175,12 +175,13 @@ a.source:visited {
 
 blockquote {
   font-style: italic;
+  font-family: "Calibri", sans-serif;
   margin: 20px;
   margin-top: 0px;
   margin-bottom: 0px;
   padding: 20px;
   padding-top: 10px;
-  font-size: 12pt;
+  font-size: 11pt;
   text-align: center;
   padding-bottom: 10px;
 }
