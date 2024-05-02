@@ -125,7 +125,9 @@ body {
 .source {
   margin: 20px;
   margin-top: 0px;
+  margin-bottom: 0px;
   padding-top: 10px;
+  padding-bottom: 10px;
   text-align: center;
   font-size: 10pt;
   font-family: "Calibri", sans-serif;
@@ -135,6 +137,8 @@ body {
 .source2 {
   margin: 20px;
   margin-top: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 10px;
   padding-top: 10px;
   text-align: center;
   font-size: 10pt;
@@ -145,7 +149,9 @@ body {
 .source3 {
   margin: 20px;
   margin-top: 0px;
+  margin-bottom: 0px;
   padding-top: 10px;
+  padding-bottom: 10px;
   text-align: center;
   font-size: 10pt;
   font-family: "Calibri", sans-serif;
