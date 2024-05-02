@@ -444,7 +444,7 @@ L.control.layers(basemaps).addTo(map);
       for (var i = 0; i < pixelsAbove.length - 1; i++) {
 
         if ( currentPosition >= pixelsAbove[i]
-          && currentPosition < (pixelsAbove[i+1] - 4 * chapterContainerMargin)
+          && currentPosition < (pixelsAbove[i+1] - 3 * chapterContainerMargin)
           && currentlyInFocus != i
         ) {
 
