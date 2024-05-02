@@ -446,7 +446,7 @@ if (c['Third Media Credit Link']) {
       for (var i = 0; i < pixelsAbove.length - 1; i++) {
 
         if ( currentPosition >= pixelsAbove[i]
-          && currentPosition < (pixelsAbove[i+1] - 4 * chapterContainerMargin)
+          && currentPosition < (pixelsAbove[i+1] - 2 * chapterContainerMargin)
           && currentlyInFocus != i
         ) {
 
