@@ -125,9 +125,8 @@ body {
 .source {
   margin: 20px;
   margin-top: 0px;
-  margin-bottom: 0px;
+  margin-bottom: 10px;
   padding-top: 10px;
-  padding-bottom: 10px;
   text-align: center;
   font-size: 10pt;
   font-family: "Calibri", sans-serif;
