@@ -246,7 +246,7 @@ L.control.layers(basemaps).addTo(map);
                 class: 'source'
               });
             } else {
-              source = $('<div>', {
+              source = $('<div></div>', {
                 text: c['Media Credit'],
                 class: 'source'
               });
@@ -260,7 +260,7 @@ L.control.layers(basemaps).addTo(map);
                 class: 'source2'
               });
             } else {
-              source2 = $('<div>', {
+              source2 = $('<div></div>', {
                 text: c['Second Media Credit'],
                 class: 'source2'
               });
@@ -274,7 +274,7 @@ L.control.layers(basemaps).addTo(map);
                 class: 'source3'
               });
             } else {
-              source3 = $('<div>', {
+              source3 = $('<div></div>', {
                 text: c['Third Media Credit'],
                 class: 'source3'
               });
