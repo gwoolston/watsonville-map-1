@@ -237,49 +237,51 @@ L.control.layers(basemaps).addTo(map);
             var thirdMediaContainer = null;
       
             // Add media source
-            var source = '';
-            if (c['Media Credit Link']) {
-              source = $('<a>', {
-                text: c['Media Credit'],
-                href: c['Media Credit Link'],
-                target: "_blank",
-                class: 'source'
-              });
-            } else {
-              source = $('<div></div>', {
-                text: c['Media Credit'],
-                class: 'source'
-              });
-            }
-            var source2 = '';
-            if (c['Second Media Credit Link']) {
-              source2 = $('<a>', {
-                text: c['Second Media Credit'],
-                href: c['Second Media Credit Link'],
-                target: "_blank",
-                class: 'source2'
-              });
-            } else {
-              source2 = $('<div></div>', {
-                text: c['Second Media Credit'],
-                class: 'source2'
-              });
-            }
-            var source3 = '';
-            if (c['Third Media Credit Link']) {
-              source3 = $('<a>', {
-                text: c['Third Media Credit'],
-                href: c['Third Media Credit Link'],
-                target: "_blank",
-                class: 'source3'
-              });
-            } else {
-              source3 = $('<div></div>', {
-                text: c['Third Media Credit'],
-                class: 'source3'
-              });
-            }
+var source = '';
+if (c['Media Credit Link']) {
+  source = $('<a>', {
+    html: c['Media Credit'], // Use html instead of text
+    href: c['Media Credit Link'],
+    target: "_blank",
+    class: 'source'
+  });
+} else {
+  source = $('<div></div>', {
+    html: c['Media Credit'], // Use html instead of text
+    class: 'source'
+  });
+}
 
+var source2 = '';
+if (c['Second Media Credit Link']) {
+  source2 = $('<a>', {
+    html: c['Second Media Credit'], // Use html instead of text
+    href: c['Second Media Credit Link'],
+    target: "_blank",
+    class: 'source2'
+  });
+} else {
+  source2 = $('<div></div>', {
+    html: c['Second Media Credit'], // Use html instead of text
+    class: 'source2'
+  });
+}
+
+var source3 = '';
+if (c['Third Media Credit Link']) {
+  source3 = $('<a>', {
+    html: c['Third Media Credit'], // Use html instead of text
+    href: c['Third Media Credit Link'],
+    target: "_blank",
+    class: 'source3'
+  });
+} else {
+  source3 = $('<div></div>', {
+    html: c['Third Media Credit'], // Use html instead of text
+    class: 'source3'
+  });
+}
+      
             // Video
             if (c['Media Link'] && c['Media Link'].endsWith('.mp4')) {
               media = $('<video></video>', {
