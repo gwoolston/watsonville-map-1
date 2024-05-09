@@ -97,9 +97,11 @@ $(window).on('load', function() {
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a> hosted by <a href="https://openstreetmap.fr/" target="_blank">OpenStreetMap France</a>'
 });
     
-       // Add the zoomAnimation and zoomControl options
+basemap.addTo(map);
+      
+	  // Add the zoomAnimation and zoomControl options
        zoomAnimation: false, // Disable zoom animation
-     }).addTo(map);
+  
 
     // // Disable animation on load (again)
     // map.setView([36.91029104437439, -121.75611790937582], 15, { animate: false });
