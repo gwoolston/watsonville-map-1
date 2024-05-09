@@ -97,12 +97,6 @@ $(window).on('load', function() {
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a> hosted by <a href="https://openstreetmap.fr/" target="_blank">OpenStreetMap France</a>'
 });
     
-       // Pass the api key to most commonly used parameters
-       apiKey: trySetting('_tileProviderApiKey', ''),
-       apikey: trySetting('_tileProviderApiKey', ''),
-       key: trySetting('_tileProviderApiKey', ''),
-       accessToken: trySetting('_tileProviderApiKey', ''),
-  
        // Add the zoomAnimation and zoomControl options
        zoomAnimation: false, // Disable zoom animation
      }).addTo(map);
